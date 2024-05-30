@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return svg;
   }
 
-  document.querySelectorAll('.code-copy-btn').forEach(function (button) {
+  document.querySelectorAll('.hextra-code-copy-btn').forEach(function (button) {
     // Add copy and success icons
     button.querySelector('.copy-icon')?.appendChild(getCopyIcon());
     button.querySelector('.success-icon')?.appendChild(getSuccessIcon());
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
           button.classList.add('copied');
           setTimeout(function () {
             button.classList.remove('copied');
-          }, 500);
+          }, 1000);
         }).catch(function (err) {
           console.error('Failed to copy text: ', err);
         });

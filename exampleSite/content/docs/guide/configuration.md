@@ -90,6 +90,16 @@ params:
 For the main sidebar, it is automatically generated from the structure of the content directory.
 See the [Organize Files](/docs/guide/organize-files) page for more details.
 
+To exclude a single page from the left sidebar, set the `sidebar.exclude` parameter in the front matter of the page:
+
+```yaml {filename="content/docs/guide/configuration.md"}
+---
+title: Configuration
+sidebar:
+  exclude: true
+---
+```
+
 ### Extra Links
 
 Sidebar extra links are defined under the `menu.sidebar` section in the config file:
@@ -129,17 +139,17 @@ To configure the page edit link, we can set the `params.editURL.base` parameter 
 ```yaml {filename="hugo.yaml"}
 params:
   editURL:
+    enable: true
     base: "https://github.com/your-username/your-repo/edit/main"
 ```
 
 The edit links will be automatically generated for each page based on the provided url as root directory.
-If you want to set edit link for a specific page, you can set the `params.editURL` parameter in the front matter of the page:
+If you want to set edit link for a specific page, you can set the `editURL` parameter in the front matter of the page:
 
 ```yaml {filename="content/docs/guide/configuration.md"}
 ---
 title: Configuration
-params:
-  editURL: "https://example.com/edit/this/page"
+editURL: "https://example.com/edit/this/page"
 ---
 ```
 
@@ -151,7 +161,7 @@ To modify the copyright text displayed in your website's footer, you'll need to 
 In this file, specify your new copyright text as shown below:
 
 ```yaml {filename="i18n/en.yaml"}
-copyright: "© 2023 YOUR TEXT HERE"
+copyright: "© 2024 YOUR TEXT HERE"
 ```
 
 For your reference, an example [`i18n/en.yaml`](https://github.com/imfing/hextra/blob/main/i18n/en.yaml) file can be found in the GitHub repository. Additionally, you could use Markdown format in the copyright text.
